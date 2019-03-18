@@ -9,7 +9,10 @@ class Body extends Component {
       <div>
         <Grid celled>
           <Grid.Row>
-            <Grid.Column width={4}>
+          <Grid.Column width={1}>
+
+            </Grid.Column>
+            <Grid.Column width={3}>
               <h3
                 //  style={{ backgroundColor: "purple" }}
                 onClick={this.changeColor}
