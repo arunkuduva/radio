@@ -2,24 +2,34 @@ import React, { Component } from "react";
 import Track from "./Track";
 class Tracks extends Component {
   state = { tracks: [] };
+  
   constructor() {
     super();
+  }
+
+  componentDidMount(){
     this.setState({
       tracks: [
         {
-          Name: "xxx",
+          name: "xxx",
+          album:"xxxalbum",
           image: "www.sample.com/images",
-          source: "ww.sample.com/audio/track1"
+          source: "ww.sample.com/audio/track1",
+          avgrating:3.5
         },
         {
-          Name: "YYY",
+          name: "YYY",
+          album:"YYYalbum",
           image: "www.sample.com/images",
-          source: "ww.sample.com/audio/track2"
+          source: "ww.sample.com/audio/track2",
+          avgrating:4.1
         },
         {
-          Name: "YYY",
+          name: "ZZZ",
+          album:"ZZZalbum",
           image: "www.sample.com/images",
-          source: "ww.sample.com/audio/track3"
+          source: "ww.sample.com/audio/track3",
+          avgrating:1.2
         }
       ]
     });
@@ -28,6 +38,8 @@ class Tracks extends Component {
     let trackhtml = this.state.tracks.map(track => {
       return <Track trackdetails={track} />;
     });
+    console.log("inside Tracks component");
+    console.log(trackhtml)
     return <div>{trackhtml}</div>;
   }
 }
