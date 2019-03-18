@@ -11,9 +11,9 @@ class Track extends Component {
     <Item>
       <Item.Image src={require('./assets/Desert.jpg')}/>
       <Item.Content>
-        <Item.Header as='a'>{this.props.trackdetails.name}</Item.Header>
+        <Item.Header as='a'>{this.props.albumdetails.name}</Item.Header>
         <Item.Meta>
-          <span className='cinema'>{this.props.trackdetails.album}</span>
+          <span className='cinema'>{this.props.albumdetails.album}</span>
         </Item.Meta>
         <Item.Description>{paragraph}</Item.Description>
         <Item.Extra>
@@ -21,7 +21,7 @@ class Track extends Component {
           <Label icon='globe' content='Additional Languages' />
         </Item.Extra>
         <Item.Extra>
-          <Button primary floated='right'>
+          <Button primary floated='left' color="purple">
             Play Song
             <Icon name='right chevron' />
           </Button>

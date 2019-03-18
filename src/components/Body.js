@@ -17,9 +17,14 @@ class Body extends Component {
                 Languages
               </h3>
             </Grid.Column>
-            <Grid.Column width={8}>
+            <Grid.Column width={4}>
               <div>
                 <Tracks />
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <div>
+              <Radio />
               </div>
             </Grid.Column>
             <Grid.Column width={4}>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Track from "./Track";
 class Tracks extends Component {
-  state = { tracks: [] };
+  state = { albums: [] };
   
   constructor() {
     super();
@@ -9,7 +9,7 @@ class Tracks extends Component {
 
   componentDidMount(){
     this.setState({
-      tracks: [
+      albums: [
         {
           name: "xxx",
           album:"xxxalbum",
@@ -35,8 +35,8 @@ class Tracks extends Component {
     });
   }
   render() {
-    let trackhtml = this.state.tracks.map(track => {
-      return <Track trackdetails={track} />;
+    let trackhtml = this.state.albums.map(album => {
+      return <Track albumdetails={album} />;
     });
     console.log("inside Tracks component");
     console.log(trackhtml)
