@@ -13,7 +13,7 @@ class Sponsors extends Component {
       <div>
         <Carousel
           style={{ height: "100px" }}
-          autoPlay
+          autoPlay infiniteLoop
           showThumbs={false}
           showArrows={true}
           showStatus={true}

@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import Body from "./components/Body";
 import Sponsors from "./components/Sponsors";
+import WelcomeCarousel from "./components/WelcomeCarousel"
 import { Container } from "semantic-ui-react";
 import Button from "./Button";
 class App extends Component {
@@ -13,8 +14,12 @@ class App extends Component {
       <div>
         <Button />
         <Header />
+        <WelcomeCarousel />
         <CTRMenu />
         <Body />
+        <br/>
+        <hr />
+        <br/>
         <Sponsors />
 
         <Advertisement />

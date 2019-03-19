@@ -41,14 +41,17 @@ class TrackSongs extends Component {
       const songHTML = this.state.songs.map(song => {
         return (
           <div>
+            
             <div>{song.name}</div>
             <audio ref="audio_tag" src={song.src} controls autoPlay />
           </div>
         );
       });
-      return <div>{songHTML}</div>;
+      return <div>
+      {this.props.songs.name}
+      {songHTML}</div>;
     } else {
-      return <div>Loading...</div>;
+      return <div>Pick an Album...</div>;
     }
   }
   // render() {

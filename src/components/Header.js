@@ -11,11 +11,12 @@ class Header extends Component {
           borderBottom: "5px",
           // border: "5px solid purple",
           fontSize: "14px",
-          height: "100%",
+          height: "100px",
           textAlign: "centre",
           position: "relative",
           clear: "both",
-          display: "block"
+          display: "block",
+          backgroundColor:"grey"
         }}
         columns={3}
         divided
