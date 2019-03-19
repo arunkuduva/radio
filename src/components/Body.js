@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import Radio from "./Radio";
 import Blog from "./Blog";
-import { Grid } from "semantic-ui-react";
-import Tracks from "./Tracks";
+import { Grid, Segment } from "semantic-ui-react";
+import Album from "./Album";
+import TrackSongs from "./TrackSongs";
 class Body extends Component {
   render() {
     return (
       <div>
-        <Grid celled>
+        <Grid>
           <Grid.Row>
-          <Grid.Column width={1}>
-
-            </Grid.Column>
-            <Grid.Column width={3}>
+            <Grid.Column
+              mobile={16}
+              tablet={8}
+              computer={3} // width={3}
+            >
               <h3
                 //  style={{ backgroundColor: "purple" }}
                 onClick={this.changeColor}
@@ -20,26 +22,31 @@ class Body extends Component {
                 Languages
               </h3>
             </Grid.Column>
-            <Grid.Column width={4}>
+            <Grid.Column
+              mobile={16}
+              tablet={8}
+              computer={9} //width={4}
+            >
               <div>
-                <Tracks />
+                <Album />
               </div>
             </Grid.Column>
-            <Grid.Column width={4}>
-              <div>
-              <Radio />
-              </div>
-            </Grid.Column>
-            <Grid.Column width={4}>
+
+            <Grid.Column
+              mobile={16}
+              tablet={8}
+              computer={4}
+              //width={4}
+            >
               <div>
                 <Grid divided="vertically">
                   <Grid.Row>
-                    <Grid.Column>
+                    <Grid.Column mobile={16} tablet={8} computer={4}>
                       <Radio />
                     </Grid.Column>
                   </Grid.Row>
                   <Grid.Row>
-                    <Grid.Column>
+                    <Grid.Column mobile={16} tablet={8} computer={4}>
                       <Blog />
                     </Grid.Column>
                   </Grid.Row>

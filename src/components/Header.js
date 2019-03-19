@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Button } from "semantic-ui-react";
-import GoogleAuth  from "./GoogleAuth";
+import GoogleAuth from "./GoogleAuth";
 import "./Header.css";
 
 class Header extends Component {
@@ -9,9 +9,13 @@ class Header extends Component {
       <Grid
         style={{
           borderBottom: "5px",
-          border: "5px solid purple",
-          height:"100%",
-          textAlign:"centre"
+          // border: "5px solid purple",
+          fontSize: "14px",
+          height: "100%",
+          textAlign: "centre",
+          position: "relative",
+          clear: "both",
+          display: "block"
         }}
         columns={3}
         divided

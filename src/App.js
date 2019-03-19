@@ -6,10 +6,12 @@ import SearchBar from "./components/SearchBar";
 import Body from "./components/Body";
 import Sponsors from "./components/Sponsors";
 import { Container } from "semantic-ui-react";
+import Button from "./Button";
 class App extends Component {
   render() {
     return (
       <div>
+        <Button />
         <Header />
         <CTRMenu />
         <Body />
