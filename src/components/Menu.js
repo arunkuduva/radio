@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Menu, Segment, Input } from "semantic-ui-react";
+import SearchInput from "./SearchInput";
 import MenuHeader from "./Menu.css";
 
 const divStyle = {
@@ -55,7 +56,7 @@ class CTRMenu extends Component {
           />
           <Menu.Menu position="right">
             <Menu.Item>
-              <Input icon="search" placeholder="Search..." />
+              <SearchInput />
             </Menu.Item>
           </Menu.Menu>
         </Menu>
