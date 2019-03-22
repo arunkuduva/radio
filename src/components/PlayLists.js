@@ -48,6 +48,8 @@ class PlayLists extends Component {
   render() {
     const { connectDropTarget, hovered, item } = this.props;
     const backgroundColor = hovered ? "lightgreen" : "white";
+    console.log("item is ");
+    console.log(item);
     return connectDropTarget(
       <div
         className="target"
@@ -57,7 +59,7 @@ class PlayLists extends Component {
           border: "1px solid grey"
         }}
       >
-        Target
+        {item != null && <div>{item.name}</div>}
       </div>
     );
   }
