@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Grid, Menu, Segment, Input } from "semantic-ui-react";
+import {  Menu} from "semantic-ui-react";
 import SearchInput from "./SearchInput";
-import MenuHeader from "./Menu.css";
+//import MenuHeader from "./Menu.css";
 
 const divStyle = {
   margin: "30px",

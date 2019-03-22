@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Button, Icon, Image, Item, Label } from "semantic-ui-react";
+
 
 import Song from "./Song";
 
-const paragraph = require("./assets/Desert.jpg");
+
 
 class TrackSongs extends Component {
   state = {
@@ -29,14 +29,14 @@ class TrackSongs extends Component {
 
   componentDidMount() {
     this.setState({ visible: "none" });
-    console.log("i am inside componentdidmount of TrackSongs");
+ //   console.log("i am inside componentdidmount of TrackSongs");
   }
   componentWillUnmount() {
-    console.log("i am inside componentWillUnmount of TrackSongs");
+ //   console.log("i am inside componentWillUnmount of TrackSongs");
   }
   componentWillUpdate() {
     /// fetch the API call to set the state of the songs by checking the this.props.songs.name
-    console.log("i am inside componentDidUpdate of TrackSongs");
+//    console.log("i am inside componentDidUpdate of TrackSongs");
   }
 
   render() {

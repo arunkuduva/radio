@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Icon, Image, Item, Label } from "semantic-ui-react";
+import { Button, Icon,  Item, Label } from "semantic-ui-react";
 const paragraph = require("./assets/Desert.jpg");
 
 class Track extends Component {

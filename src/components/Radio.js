@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import {
-  Button,
-  Icon,
-  Image,
-  Item,
-  Label,
-  Segment,
-  Container
+
+  Item
 } from "semantic-ui-react";
-const paragraph = require("./assets/Desert.jpg");
+
 class Radio extends Component {
   render() {
     return (

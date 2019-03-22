@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Button.css"; // Tell Webpack that Button.js uses these styles
-import {Image} from 'semantic-ui-react'
 
 class Button extends Component {
   render() {

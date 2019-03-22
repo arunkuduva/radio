@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import Track from "./Track";
 import TrackSongs from "./TrackSongs";
-import { Grid, GridRow, GridColumn, Segment } from "semantic-ui-react";
+import { Grid,  Segment } from "semantic-ui-react";
 import InfiniteScroll from "react-infinite-scroll-component";
-const style = {
-  height: 30,
-  border: "1px solid green",
-  margin: 6,
-  padding: 8
-};
+
 class Album extends Component {
   state = { albums: [], selectedalbum: null };
   componentDidMount() {
@@ -48,11 +43,11 @@ class Album extends Component {
   }
   
   onAlbumSelect = Album => {
-    console.log("from the app ", Album);
+    //console.log("from the app ", Album);
     this.setState({ selectedalbum: Album });
   };
   fetchMoreData = () => {
-          const dataLength= this.state.albums.length
+       //   const dataLength= this.state.albums.length
           if (this.state.albums.length >= 500) {
       this.setState({ hasMore: false });
       return;
@@ -67,9 +62,9 @@ class Album extends Component {
   };
 
   render() {
-    let trackhtml = this.state.albums.map(album => {
-      return <Track albumdetails={album} onAlbumSelect={this.onAlbumSelect} />;
-    });
+    // let trackhtml = this.state.albums.map(album => {
+    //   return <Track albumdetails={album} onAlbumSelect={this.onAlbumSelect} />;
+    // });
     return (
        <Segment>
        <Grid columns={2} relaxed="very">

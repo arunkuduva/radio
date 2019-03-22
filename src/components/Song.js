@@ -10,6 +10,10 @@ const itemSource = {
     if (!monitor.didDrop()) {
       return;
     }
+    console.log("endDrag from source");
+    console.log(props);
+    console.log(monitor);
+    console.log(component);
     // return props.handleDrop(props.song.name);
   }
 };

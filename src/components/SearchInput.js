@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Input } from "semantic-ui-react";
 import { Redirect } from "react-router-dom";
-const paragraph = require("./assets/Desert.jpg");
+
 
 class SearchInput extends Component {
   constructor(props) {

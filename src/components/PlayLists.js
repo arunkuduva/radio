@@ -1,33 +1,18 @@
 import React, { Component } from "react";
 import { DropTarget } from "react-dnd";
+import Song from "./Song"
 
 const playlistspec = {
-  drop(props, monitor, component) {
+  drop (props, monitor, component) {
     console.log("dropped in the target");
     console.log(props);
-    console.log(monitor);
+    console.log(monitor.getItem());
     console.log(component);
-    // component.updater.enqueueSetState(
-    //   this,
-    //   {
-    //     playlists: [
-    //       {
-    //         name: "1",
-    //         src: "www.music.com"
-    //       },
-    //       {
-    //         name: "2",
-    //         src: "www.music.com"
-    //       }
-    //     ]
-    //   },
-    //   () => {
-    //     console.log("callback from setstate");
-    //   }
-    // );
+    component.updateState(monitor.getItem())
+    
   }
 };
-function collect(connect, monitor) {
+function collect (connect, monitor) {
   return {
     connectDropTarget: connect.dropTarget(),
     hovered: monitor.isOver(),
@@ -36,29 +21,48 @@ function collect(connect, monitor) {
 }
 
 class PlayLists extends Component {
-  state = {
-    playlists: [
-      {
-        name: "alaipayuthey",
-        src: "www.music.com"
-      }
-    ]
-  };
+  constructor(props) {
+    super(props);
+    this.state={songs:[]}
+    console.log("constructor from playlist holder " )
+}
+
+componentDidMount(){
+  //super(props);
+  this.setState({songs:[]})
+  console.log("componentDidMount from playlist  " )
+}
+
+updateState= (song)=>{
+  // this.setState(state=>{
+  //     const list = [state.songs, ...state.list];
+  // })
+  console.log("state in playlist holder is" )
+  console.log(this.state )
+ let  newState = this.state.songs.concat(song)
+ this.setState({songs:newState})
+ console.log("state in playlist holder after push" )
+ console.log(this.state )
+
+}
 
   render() {
     const { connectDropTarget, hovered, item } = this.props;
     const backgroundColor = hovered ? "lightgreen" : "white";
-    console.log("item is ");
-    console.log(item);
+    console.log("prpos is ");
+    console.log(this.props);
     return connectDropTarget(
       <div
         className="target"
         style={{
           background: backgroundColor,
-          minHeight: "200px",
+          minHeight: "400px",
           border: "1px solid grey"
         }}
       >
+      {this.state.songs.map(song => {
+        return <Song song={song} />;
+      })}
         {item != null && <div>{item.name}</div>}
       </div>
     );
