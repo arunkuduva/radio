@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Button, Icon, Image, Item, Label } from "semantic-ui-react";
+
+import Song from "./Song";
+
 const paragraph = require("./assets/Desert.jpg");
+
 class TrackSongs extends Component {
   state = {
     songs: [
@@ -37,47 +41,43 @@ class TrackSongs extends Component {
 
   render() {
     if (this.props.songs != null) {
-      console.log(this.props.songs);
       const songHTML = this.state.songs.map(song => {
-        return (
-          <div>
-            
-            <div>{song.name}</div>
-            <audio ref="audio_tag" src={song.src} controls autoPlay />
-          </div>
-        );
+        return <Song song={song} />;
       });
-      return <div>
-      {this.props.songs.name}
-      {songHTML}</div>;
+      return (
+        <div>
+          {this.props.songs.name}
+          {songHTML}
+        </div>
+      );
     } else {
       return <div>Pick an Album...</div>;
     }
   }
-  // render() {
-  //   return (
-  //     <div>
-  //       <div
-  //         style={{
-  //           Color: "Purple"
-  //         }}
-  //       >
-  //         Listen to TrackSongs
-  //       </div>
-  //       <audio
-  //         ref="audio_tag"
-  //         src="./assets/sound.mp3"
-  //         style={{
-  //           //  margin: "4px",
-  //           // border: "10px purple"
-  //           backgroundColor: "grey"
-  //         }}
-  //         controls
-  //         autoPlay
-  //       />
-  //     </div>
-  //   );
-  // }
 }
 
 export default TrackSongs;
+// render() {
+//   return (
+//     <div>
+//       <div
+//         style={{
+//           Color: "Purple"
+//         }}
+//       >
+//         Listen to TrackSongs
+//       </div>
+//       <audio
+//         ref="audio_tag"
+//         src="./assets/sound.mp3"
+//         style={{
+//           //  margin: "4px",
+//           // border: "10px purple"
+//           backgroundColor: "grey"
+//         }}
+//         controls
+//         autoPlay
+//       />
+//     </div>
+//   );
+// }

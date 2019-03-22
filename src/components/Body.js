@@ -4,6 +4,9 @@ import Blog from "./Blog";
 import { Grid, Segment } from "semantic-ui-react";
 import Album from "./Album";
 import TrackSongs from "./TrackSongs";
+import HTML5Backend from "react-dnd-html5-backend";
+import { DragDropContext } from "react-dnd";
+import PlayLists from "./PlayLists";
 class Body extends Component {
   render() {
     return (
@@ -19,7 +22,7 @@ class Body extends Component {
                 //  style={{ backgroundColor: "purple" }}
                 onClick={this.changeColor}
               >
-                Languages
+                <PlayLists sampleprop="samplevalue" />
               </h3>
             </Grid.Column>
             <Grid.Column
@@ -60,4 +63,6 @@ class Body extends Component {
   }
 }
 
-export default Body;
+//export default Body;
+
+export default DragDropContext(HTML5Backend)(Body);
