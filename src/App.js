@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./components/Home";
 import SearchResults from "./components/SearchResults";
-import CommentsHolder from "./components/Comments";
+import CommentsHolder from "./components/CommentsHolder";
 class App extends Component {
   render() {
     return (

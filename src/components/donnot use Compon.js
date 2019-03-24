@@ -5,7 +5,9 @@ export default class CommentsHolderDelinker extends Component {
   state = { children: [] };
   //constructor() {}
   componentDidMount() {
-    this.setState({ children: this.props.location.state.children });
+    console.log("CommentsHolderDelinker componentDidMount this.props");
+    console.log(this.props);
+    this.setState({ children: this.props.children });
   }
   render() {
     //console.log(this.props.location.state);

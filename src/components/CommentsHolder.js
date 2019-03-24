@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import CommentsHolderDelinker from "./Comments";
+import Comments from "./Comments";
 export default class CommentsHolder extends Component {
   state = { children: [] };
   //constructor() {}
   componentDidMount() {
+    console.log("CommentsHolder componentDidMount this.props");
+    console.log(this.props);
     this.setState({ children: this.props.location.state.children });
   }
   render() {
@@ -20,7 +22,7 @@ export default class CommentsHolder extends Component {
         <div>comments holder</div>
 
         <Link to="/">Home</Link>
-        <CommentsHolderDelinker children={this.state.children} />
+        <Comments children={this.state.children} />
       </div>
     );
   }

@@ -5,7 +5,7 @@ class Blog extends Component {
     return (
       <Link
         to={{
-          pathname: `/blogs`,
+          pathname: "/blogs",
           state: {
             children: [
               {
