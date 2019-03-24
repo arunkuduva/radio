@@ -1,23 +1,20 @@
 import React, { Component } from "react";
-import PlayLists from "./PlayLists"
+import PlayLists from "./PlayLists";
 
 class PlayListsHolder extends Component {
+  componentDidMount() {
+    //super(props);
+    this.setState = { songs: [] };
+    // console.log("componentDidMount from PlayListsHolder  " )
+  }
 
-    componentDidMount(){
-        //super(props);
-        this.setState={songs:[]}
-        console.log("componentDidMount from PlayListsHolder  " )
-      }
-
-  render() { 
+  render() {
     return (
       <div>
-          <PlayLists /> 
+        <PlayLists />
       </div>
     );
-   
   }
 }
 
 export default PlayListsHolder;
-

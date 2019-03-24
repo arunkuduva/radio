@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Advertisement from "./Advertisement";
 import CTRMenu from "./Menu";
 
-
 import Body from "./Body";
 import Sponsors from "./Sponsors";
 
@@ -13,6 +12,9 @@ class Home extends Component {
       <div>
         <WelcomeCarousel />
         <CTRMenu />
+        <h3> Latest </h3>
+        <Body />
+        <h3> Devotional </h3>
         <Body />
         <br />
         <hr />

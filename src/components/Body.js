@@ -16,23 +16,24 @@ class Body extends Component {
             <Grid.Column
               mobile={16}
               tablet={8}
-              computer={3} // width={3}
+              computer={8} //width={4}
+            >
+              <div>
+                <Album />
+              </div>
+            </Grid.Column>
+
+            <Grid.Column
+              mobile={16}
+              tablet={8}
+              computer={4} // width={3}
             >
               <h3
                 //  style={{ backgroundColor: "purple" }}
                 onClick={this.changeColor}
               >
-                <PlayListsHolder  />
+                <PlayListsHolder />
               </h3>
-            </Grid.Column>
-            <Grid.Column
-              mobile={16}
-              tablet={8}
-              computer={9} //width={4}
-            >
-              <div>
-                <Album />
-              </div>
             </Grid.Column>
 
             <Grid.Column
