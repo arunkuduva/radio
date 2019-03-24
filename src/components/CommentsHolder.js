@@ -16,9 +16,7 @@ export default class CommentsHolder extends Component {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
+
         <div>comments holder</div>
 
         <Link to="/">Home</Link>
