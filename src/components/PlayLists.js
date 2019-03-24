@@ -48,7 +48,7 @@ updateState= (song)=>{
 
   render() {
     const { connectDropTarget, hovered, item } = this.props;
-    const backgroundColor = hovered ? "lightgreen" : "white";
+    const backgroundColor = hovered ? "lightgrey" : "white";
     console.log("prpos is ");
     console.log(this.props);
     return connectDropTarget(
@@ -56,8 +56,10 @@ updateState= (song)=>{
         className="target"
         style={{
           background: backgroundColor,
-          minHeight: "400px",
-          border: "1px solid grey"
+          height: "400px",
+        //  border: "1px solid grey",
+          overflowY: 'scroll',
+          overflowX: 'scroll',
         }}
       >
       {this.state.songs.map(song => {
