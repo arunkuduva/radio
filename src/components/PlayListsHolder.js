@@ -11,7 +11,7 @@ class PlayListsHolder extends Component {
   render() {
     return (
       <div>
-        <PlayLists />
+        <PlayLists someprop="someprop" />
       </div>
     );
   }

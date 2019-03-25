@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { DropTarget } from "react-dnd";
 import { Segment } from "semantic-ui-react";
-import Song from "./Song";
+import PlayListSongs from "./PlayListSongs";
+
 
 const playlistspec = {
   drop(props, monitor, component) {
-    // console.log("dropped in the target");
-    // console.log(props);
-    // console.log(monitor.getItem());
-    // console.log(component);
+     console.log("dropped in the target");
+     console.log(props);
+     console.log(monitor.getItem());
+     console.log(component);
     component.updateState(monitor.getItem());
   }
 };
@@ -23,7 +24,7 @@ function collect(connect, monitor) {
 class PlayLists extends Component {
   constructor(props) {
     super(props);
-    this.state = { songs: [] };
+    this.state = { songs: [] ,selectedSong:null};
     //   console.log("constructor from playlist holder ");
   }
 
@@ -32,19 +33,61 @@ class PlayLists extends Component {
     this.setState({ songs: [] });
     //  console.log("componentDidMount from playlist  ");
   }
+  fetchSongsFromAlbum=(item)=>{
 
-  updateState = song => {
+    ///// use axiois to call the api from server and in the promise return set the state
+    let newState = this.state.songs.concat([
+      {
+        name: "yaanji",
+        singers: "Anirudn and some lady",
+        src: "./assets/sound1.mp3"
+      },
+      {
+        name: "sakkarak",
+        singers: "SPB and Janaki",
+        src: "./assets/sound2.mp3"
+      },
+      {
+        name: "Sambo",
+        singers: "Yesudas",
+        src: "./assets/sound3.mp3"
+      }
+    ]) 
+    this.setState({ songs: newState })
+  }
+  updateState = item => {
     // this.setState(state=>{
     //     const list = [state.songs, ...state.list];
     // })
     // console.log("state in playlist holder is");
     // console.log(this.state);
-    let newState = this.state.songs.concat(song);
-    this.setState({ songs: newState });
+    if (typeof item.album==="undefined"){
+      let newState = this.state.songs.concat(item);
+      this.setState({ songs: newState });
+    }else{
+      this.fetchSongsFromAlbum(item);
+    }
+    
     //  console.log("state in playlist holder after push");
     //  console.log(this.state);
   };
+  onSongSelect = song => {
+    //console.log("from the app ", Album);
+    this.setState({ selectedSong: song });
+    
 
+    var array = [...this.state.songs];
+    var index = array.indexOf(song);
+    if (index !== -1) {
+      array.splice(index, 1);
+      this.setState({songs: array});
+      console.log("song deleted")
+    }else{
+      console.log("song not deleted" + index )
+
+    }
+
+  };
   render() {
     const { connectDropTarget, hovered, item } = this.props;
     const backgroundColor = hovered ? "lightgrey" : "white";
@@ -64,7 +107,8 @@ class PlayLists extends Component {
             }}
           >
             {this.state.songs.map(song => {
-              return <Song song={song} />;
+              return <PlayListSongs song={song} 
+              onSongSelect={this.onSongSelect}/>;
             })}
             {item != null && <div>{item.name}</div>}
           </div>

@@ -1,11 +1,41 @@
 import React, { Component } from "react";
 import { Button, Icon,  Item, Label } from "semantic-ui-react";
+
+import { DragSource } from "react-dnd";
 const paragraph = require("./assets/Desert.jpg");
+
+const itemSource = {
+  beginDrag(props) {
+    console.log("Track dragging");
+    return props.albumdetails;
+  },
+  endDrag(props, monitor, component) {
+    if (!monitor.didDrop()) {
+      return;
+    }
+    console.log( "Track endDrag from source");
+    console.log(props);
+    console.log(monitor);
+    console.log(monitor.getDropResult());
+    console.log(component);
+    // return props.handleDrop(props.song.name);
+  }
+};
+
+function collect(connect, monitor) {
+  return {
+    connectDragSource: connect.dragSource(),
+    connectDragPreview: connect.dragPreview(),
+    isDragging: monitor.isDragging()
+  };
+}
 
 class Track extends Component {
   render() {
-    return (
-      <Item.Group divided>
+    const { isDragging, connectDragSource, song } = this.props;
+    return (connectDragSource(
+      <div>
+<Item.Group divided>
         <Item>
           <Item.Image src={require("./assets/Desert.jpg")} />
           <Item.Content>
@@ -34,8 +64,10 @@ class Track extends Component {
           </Item.Content>
         </Item>
       </Item.Group>
+      </div>
+      )
     );
   }
 }
 
-export default Track;
+export default DragSource("item", itemSource, collect)(Track);
