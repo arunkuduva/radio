@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Radio from "./Radio";
-import Blog from "./Blog";
+import Blogs from "./Blogs";
 import { Grid } from "semantic-ui-react";
 import Album from "./Album";
 
@@ -51,7 +51,9 @@ class Body extends Component {
                   </Grid.Row>
                   <Grid.Row>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
-                      <Blog />
+                      <div>
+                        <Blogs />
+                      </div>
                     </Grid.Column>
                   </Grid.Row>
                 </Grid>

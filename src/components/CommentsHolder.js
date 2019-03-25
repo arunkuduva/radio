@@ -1,13 +1,25 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Comments from "./Comments";
+import axios from "axios";
 export default class CommentsHolder extends Component {
-  state = { children: [] };
+  state = { postId: null };
   //constructor() {}
   componentDidMount() {
-    console.log("CommentsHolder componentDidMount this.props");
-    console.log(this.props);
-    this.setState({ children: this.props.location.state.children });
+    // console.log("CommentsHolder componentDidMount this.props");
+    // console.log(this.props);
+    axios
+      .get(
+        "https://jsonplaceholder.typicode.com/comments?postId=" +
+          this.props.blogid
+      )
+      .then(res => {
+        console.log("comments holder component did mount");
+        console.log(res.data);
+        this.setState({
+          comments: res.data
+        });
+      });
+    //  this.setState({ children: this.props.location.state.children });
   }
   render() {
     //console.log(this.props.location.state);
@@ -19,8 +31,7 @@ export default class CommentsHolder extends Component {
 
         <div>comments holder</div>
 
-        <Link to="/">Home</Link>
-        <Comments children={this.state.children} />
+        <Comments comments={this.state.comments} />
       </div>
     );
   }
